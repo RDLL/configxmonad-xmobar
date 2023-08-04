@@ -55,6 +55,8 @@ Plug 'vim-scripts/ScrollColors'
 Plug 'flazz/vim-colorschemes'
 Plug 'JuliaEditorSupport/julia-vim'
 Plug 'frazrepo/vim-rainbow'
+Plug 'RDLL/preview-markdown.vim',{'for':'markdown'}
+Plug 'Valloric/YouCompleteMe'
 
 call plug#end()
 
@@ -73,6 +75,8 @@ python3 del powerline_setup
 
 let NERDTreeShowBookmarks = 1  " Display bookmarks on startup.
 let g:rainbow_active = 1
+
+" Configuracion de preview
 
 " Key bindings personalizados
 let mapleader = "\<space>"
