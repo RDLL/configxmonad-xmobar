@@ -55,7 +55,6 @@ Plug 'vim-scripts/ScrollColors'
 Plug 'flazz/vim-colorschemes'
 Plug 'JuliaEditorSupport/julia-vim'
 Plug 'frazrepo/vim-rainbow'
-Plug 'RDLL/preview-markdown.vim',{'for':'markdown'}
 Plug 'Valloric/YouCompleteMe'
 
 call plug#end()
@@ -76,16 +75,40 @@ python3 del powerline_setup
 let NERDTreeShowBookmarks = 1  " Display bookmarks on startup.
 let g:rainbow_active = 1
 
-" Configuracion de preview
+" Plantillas de archivos
+:autocmd BufNewFile *.cpp 0r ~/.vim/skeleton/cpp.tpl
+:autocmd BufNewFile *.hpp 0r ~/.vim/skeleton/hpp.tpl
+:autocmd BufNewFile *.py 0r ~/.vim/skeleton/py.tpl
 
 " Key bindings personalizados
 let mapleader = "\<space>"
+" Guardar
 noremap <leader>w :w<cr>
+" Desplegar menu lateral
 noremap <leader>n :NERDTreeToggle<cr>
+" Guardar y cerrar
 noremap <leader>q :wqa<cr>
-noremap <leader>c :bd<cr>
+" Cerrar buffer
+noremap <leader>e :bd<cr>
+" Cerrar todos los buffers
+noremap <leader>c :ba<cr>
+" Cambiar a la ventana de arriba
 noremap <leader><up> <c-w><c-k>
+" Cambiar a la ventana de abajo
 noremap <leader><down> <c-w><c-j>
+" Cambiar a la ventana derecha
 noremap <leader><right> <c-w><c-l>
+" Cambiar a la ventana izquierda
 noremap <leader><left> <c-w><c-h>
-noremap <leader>t :tabnew<cr> 
+" Crear nueva ventana 
+noremap <leader>t :tabnew<cr>
+" Cerrar ventana
+noremap <leader>tc :tabclose<cr>
+" Mover ventana
+noremap <leader>tm :tabmove<cr>
+" Buffer siguiente
+noremap <leader>bn :bnext<cr>
+" Buffer anterior
+noremap <leader>ba :bp<cr>
+
+
